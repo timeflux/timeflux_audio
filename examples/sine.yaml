@@ -1,11 +1,11 @@
 graphs:
   - nodes:
       - id: sine
-        module: timeflux_example.nodes.signal
+        module: timeflux_audio.nodes.signal
         class: Sine
         params:
           frequency: 120
-          amplitude: 1
+          amplitude: 0.5
           resolution: 44100
       - id: ui
         module: timeflux_ui.nodes.ui
@@ -15,8 +15,12 @@ graphs:
             monitor:
               millisPerPixel: 0.25
               lineWidth: 1
-              interpolation: linear
+      - id: output
+        module: timeflux_audio.nodes.device
+        class: Output
     edges:
       - source: sine
         target: ui:sine
+      - source: sine
+        target: output
     rate: 10

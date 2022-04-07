@@ -1,4 +1,4 @@
-"""timeflux_example.nodes.signal: generate signals"""
+"""timeflux_audio.nodes.signal: generate signals"""
 
 import time
 import numpy as np

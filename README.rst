@@ -1,8 +1,7 @@
-An example Timeflux plugin
-==========================
+Timeflux audio plugin
+=====================
 
-This is an example plugin that provides a few simple demonstration nodes. Use it as a template
-to develop your own plugins.
+This plugin allows you to synthesis and play audio streams using Timeflux. Work in progress.
 
 Installation
 ------------
@@ -14,4 +13,6 @@ You can then install this plugin in the `timeflux` environment:
 ::
 
     $ conda activate timeflux
-    $ pip install timeflux_example
+    $ git clone https://github.com/timeflux/timeflux_audio.git
+    $ cd timeflux_audio
+    $ pip install -e .
