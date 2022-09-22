@@ -43,4 +43,4 @@ class Sine(Node):
         self._now = now
         self._radian = values[-1]
         self.o.set(signal, timestamps, names=[self._name])
-        self.o.meta = {"rate": self._frequency}
+        self.o.meta = {"rate": self._resolution}
