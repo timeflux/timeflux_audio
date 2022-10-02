@@ -1,0 +1,27 @@
+graphs:
+  - nodes:
+      - id: signals
+        module: timeflux_audio.nodes.signal
+        class: Additive
+        params:
+          frequencies: [ 10, 50 ]
+          amplitudes: [ 1, .5 ]
+          resolution: 44100
+      - id: ui
+        module: timeflux_ui.nodes.ui
+        class: UI
+        params:
+          settings:
+            monitor:
+              millisPerPixel: 5
+      - id: output
+        module: timeflux_audio.nodes.device
+        class: Output
+    edges:
+      - source: signals
+        target: ui:final
+      - source: signals:signals
+        target: ui:signals
+      - source: signals
+        target: output
+    rate: 10
