@@ -65,9 +65,13 @@ class Additive(Node):
            :language: yaml
     """
 
-    def __init__(self, frequencies=[1, 2], amplitudes=[1, 1], resolution=200, name="signal"):
+    def __init__(
+        self, frequencies=[1, 2], amplitudes=[1, 1], resolution=200, name="signal"
+    ):
         if len(frequencies) != len(amplitudes):
-            raise ValueError("The frequencies and amplitudes arrays must be of equal length")
+            raise ValueError(
+                "The frequencies and amplitudes arrays must be of equal length"
+            )
         self._frequencies = frequencies
         self._amplitudes = amplitudes
         self._resolution = int(resolution)
@@ -86,7 +90,9 @@ class Additive(Node):
         signals = np.zeros((len(timestamps), len(self._frequencies)))
         for index in range(len(self._frequencies)):
             cycles = self._frequencies[index] * elapsed
-            values = np.linspace(self._radians[index], np.pi * 2 * cycles + self._radians[index], points)
+            values = np.linspace(
+                self._radians[index], np.pi * 2 * cycles + self._radians[index], points
+            )
             signals[:, index] = np.sin(values[:-1]) * self._amplitudes[index]
             self._radians[index] = values[-1]
         self._now = now
