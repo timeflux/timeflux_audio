@@ -1,0 +1,21 @@
+graphs:
+  - nodes:
+      - id: input
+        module: timeflux_audio.nodes.device
+        class: Input
+      - id: ui
+        module: timeflux_ui.nodes.ui
+        class: UI
+        params:
+          settings:
+            monitor:
+              lineWidth: 1
+      - id: output
+        module: timeflux_audio.nodes.device
+        class: Output
+    edges:
+      - source: input
+        target: ui:audio
+      - source: input
+        target: output
+    rate: 10
