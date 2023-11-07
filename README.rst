@@ -1,7 +1,7 @@
 Timeflux audio plugin
 =====================
 
-This plugin allows you to synthesis and play audio streams using Timeflux. Work in progress.
+This plugin allows you to synthesis and play audio streams using Timeflux.
 
 Installation
 ------------
@@ -13,6 +13,4 @@ You can then install this plugin in the `timeflux` environment:
 ::
 
     $ conda activate timeflux
-    $ git clone https://github.com/timeflux/timeflux_audio.git
-    $ cd timeflux_audio
-    $ pip install -e .
+    $ pip install timeflux_audio
